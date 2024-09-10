@@ -29,11 +29,11 @@ public class OpenAIController : MonoBehaviour
     private void StartConversation()
     {
         messages = new List<ChatMessage> {
-            new ChatMessage(ChatMessageRole.System, "Respond like Donald Trump. Keep your responses short and to the point.")
+            new ChatMessage(ChatMessageRole.System, "Test.")
         };
 
         inputField.text = ""; //clears input field text
-        string startString = "Donald Trump appears before you. What would you like to say?"; //starter prompt for user
+        string startString = ""; //starter prompt for user
         textField.text = startString;
         Debug.Log(startString);
     }
@@ -88,7 +88,7 @@ public class OpenAIController : MonoBehaviour
         messages.Add(responseMessage);
 
         // Update text field with response
-        textField.text = string.Format("You: {0}\n\nTrump: {1}", userMessage.Content, responseMessage.Content);
+        textField.text = string.Format("You: {0}\n\nT: {1}", userMessage.Content, responseMessage.Content);
 
         // Re-enable OK Button
         okButton.enabled = true;
